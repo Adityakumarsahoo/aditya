@@ -16,8 +16,23 @@ const JWT_SECRET = process.env.JWT_SECRET || "supersecretportfoliojwttokenkey123
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 
 // Middlewares
+const allowedOrigins = [
+  "http://localhost:3000",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    const isAllowed = allowedOrigins.includes(origin) || 
+                      origin.endsWith(".vercel.app") || 
+                      origin.includes("localhost:");
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
