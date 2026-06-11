@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Git",
+    "category": "Version Control",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "href": "https://git-scm.com"
+  },
+  {
+    "name": "GitHub",
+    "category": "Dev Platform",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "href": "https://github.com"
+  },
+  {
+    "name": "GitLab",
+    "category": "Dev Platform",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+    "href": "https://gitlab.com"
+  },
+  {
+    "name": "VS Code",
+    "category": "IDE / Editor",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    "href": "https://code.visualstudio.com"
+  },
+  {
+    "name": "IntelliJ IDEA",
+    "category": "IDE / Editor",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+    "href": "https://jetbrains.com/idea"
+  },
+  {
+    "name": "Eclipse",
+    "category": "IDE / Editor",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg",
+    "href": "https://eclipse.org"
+  },
+  {
+    "name": "Figma",
+    "category": "Design Tool",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    "href": "https://figma.com"
+  },
+  {
+    "name": "Adobe Photoshop",
+    "category": "Design Tool",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg",
+    "href": "https://adobe.com/products/photoshop.html"
+  },
+  {
+    "name": "Adobe After Effects",
+    "category": "Design Tool",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg",
+    "href": "https://adobe.com/products/aftereffects.html"
+  }
+]

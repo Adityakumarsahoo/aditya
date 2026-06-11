@@ -1,0 +1,47 @@
+[
+  {
+    "id": "exp_1",
+    "title": "Sep 2025 - Mar 2026",
+    "role": "Full Stack Developer",
+    "company": "Labmentix",
+    "companySubtitle": "Full-stack web applications development",
+    "location": "Full-Time · Noida/Remote",
+    "type": "full-time",
+    "points": [
+      "Engineered and deployed 5+ full-stack web applications using MERN Stack and Java Spring Boot, delivering scalable, production-ready solutions for real-world client projects.",
+      "Built responsive, accessible UIs using React.js and Tailwind CSS, reducing reported UI bugs by collaborating closely with QA teams.",
+      "Designed and consumed RESTful APIs integrated with MongoDB and MySQL databases, improving data retrieval efficiency through optimized query design.",
+      "Collaborated in agile sprints with cross-functional teams, ensuring on-time delivery, clean code standards, and end-to-end product ownership."
+    ],
+    "tags": [
+      "React",
+      "Tailwind CSS",
+      "MERN Stack",
+      "Java Spring Boot",
+      "MongoDB",
+      "MySQL"
+    ]
+  },
+  {
+    "id": "exp_2",
+    "title": "Jul 2025 - Nov 2025",
+    "role": "Full Stack Java Developer (Intern)",
+    "company": "ExcelR",
+    "companySubtitle": "Enterprise full-stack applications",
+    "location": "Internship · Remote",
+    "type": "internship",
+    "points": [
+      "Developed enterprise-grade full-stack applications using Java, Spring Boot, React.js, and MySQL, focusing on scalable architecture.",
+      "Built and tested 10+ RESTful API endpoints with proper authentication and error handling, ensuring secure and reliable data exchange.",
+      "Managed relational database schemas and wrote optimized SQL queries, contributing to improved response times.",
+      "Applied clean architecture principles and best coding practices, receiving consistent positive feedback during code reviews."
+    ],
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "React.js",
+      "MySQL",
+      "SQL"
+    ]
+  }
+]

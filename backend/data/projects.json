@@ -1,0 +1,200 @@
+[
+  {
+    "id": "1",
+    "title": "Aditya Prime HealthCare",
+    "slug": "aditya-prime-healthcare",
+    "description": "Hospital Management System that digitizes patient records, registrations, and doctor scheduling",
+    "detailedDescription": "A complete Hospital Management System built to streamline healthcare administration. Digitized patient registration, doctor appointment scheduling, and medical records management, eliminating manual paperwork and reducing administrative overhead. Features secure role-based access control (RBAC) for doctors, admins, and patients using Spring Security and JWT authentication.",
+    "image": "/resume.jpg",
+    "tags": [
+      "Healthcare",
+      "Full-Stack",
+      "Spring Boot",
+      "MySQL"
+    ],
+    "status": "active",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "React.js",
+      "Node.js",
+      "MySQL",
+      "HTML5",
+      "CSS3",
+      "JavaScript"
+    ],
+    "features": [
+      "Digitized patient registration",
+      "Doctor appointment scheduling",
+      "Medical records management",
+      "Secure role-based access control (RBAC)"
+    ],
+    "learningOutcomes": [
+      "Implementing secure RBAC with Spring Security and JWT",
+      "Designing complex schemas for healthcare databases in MySQL",
+      "Connecting Java Spring Boot backend with React.js frontend"
+    ],
+    "links": {
+      "github": "https://github.com/Adityakumarsahoo"
+    },
+    "author": "Aditya Kumar",
+    "authorAvatar": "/hexagon.png"
+  },
+  {
+    "id": "2",
+    "title": "QuickChat",
+    "slug": "quickchat",
+    "description": "Real-Time Messaging Application supporting group and one-on-one conversations",
+    "detailedDescription": "A full-stack real-time chat platform with zero-delay messaging using WebSockets (Socket.io), supporting group and one-on-one conversations. Deployed live on Vercel with persistent message history stored in MongoDB, delivering a WhatsApp-style user experience.",
+    "image": "/task.jpg",
+    "tags": [
+      "WebSockets",
+      "MERN",
+      "Real-Time",
+      "Communication"
+    ],
+    "status": "active",
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Socket.io",
+      "REST APIs"
+    ],
+    "features": [
+      "Zero-delay instant messaging",
+      "Group and one-on-one private conversations",
+      "Persistent message history storage",
+      "Live deployment with low latency"
+    ],
+    "learningOutcomes": [
+      "Managing WebSocket connections with Socket.io in a MERN stack",
+      "Deploying real-time services on Vercel",
+      "Structuring MongoDB documents for chat logs and history"
+    ],
+    "links": {
+      "github": "https://github.com/Adityakumarsahoo"
+    },
+    "author": "Aditya Kumar",
+    "authorAvatar": "/hexagon.png"
+  },
+  {
+    "id": "3",
+    "title": "Food Delivery Platform",
+    "slug": "food-delivery-platform",
+    "description": "Dynamic food ordering platform with restaurant listings and real-time cart management",
+    "detailedDescription": "A dynamic food ordering platform featuring interactive restaurant listings, real-time cart management, and a smooth checkout flow. Deployed on GitHub Pages with an intuitive, mobile-responsive UI to increase usability across devices.",
+    "image": "/food.jpg",
+    "tags": [
+      "E-commerce",
+      "MERN",
+      "Responsive"
+    ],
+    "status": "active",
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "REST APIs",
+      "JavaScript"
+    ],
+    "features": [
+      "Interactive restaurant listings",
+      "Real-time cart management",
+      "Smooth checkout flow",
+      "Mobile-responsive user interface"
+    ],
+    "learningOutcomes": [
+      "Building responsive layouts for varying screens without desktop compromise",
+      "Handling global cart state on the client side",
+      "Optimizing image loading and component rendering"
+    ],
+    "links": {
+      "github": "https://github.com/Adityakumarsahoo"
+    },
+    "author": "Aditya Kumar",
+    "authorAvatar": "/hexagon.png"
+  },
+  {
+    "id": "4",
+    "title": "E-Commerce Platform",
+    "slug": "e-commerce-platform",
+    "description": "Full-stack e-commerce application with product browsing, cart, and JWT auth",
+    "detailedDescription": "A full-stack e-commerce application with product browsing, cart management, order processing, and JWT-secured user authentication. Designed with a highly responsive UI using Tailwind CSS to achieve consistent performance across desktop and mobile browsers.",
+    "image": "/invoice.jpg",
+    "tags": [
+      "E-commerce",
+      "Tailwind CSS",
+      "JWT",
+      "MERN"
+    ],
+    "status": "active",
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT Authentication",
+      "Tailwind CSS",
+      "REST APIs"
+    ],
+    "features": [
+      "Product browsing and filtering",
+      "Cart management and checkout flow",
+      "Order processing pipeline",
+      "JWT-secured authentication"
+    ],
+    "learningOutcomes": [
+      "Securing api routes using JSON Web Tokens (JWT) middleware",
+      "Designing responsive grids and animations with Tailwind CSS",
+      "Managing complex state for product catalogs and user sessions"
+    ],
+    "links": {
+      "github": "https://github.com/Adityakumarsahoo"
+    },
+    "author": "Aditya Kumar",
+    "authorAvatar": "/hexagon.png"
+  },
+  {
+    "id": "5",
+    "title": "SEO Rank Tracker",
+    "slug": "seo-rank-tracker",
+    "description": "Analytics Dashboard monitoring keyword rankings and visualizing search performance",
+    "detailedDescription": "A real-time SEO tracking dashboard enabling users to monitor keyword rankings, track position changes, and visualize search engine performance metrics. Integrates SEO analytics APIs and features clean data visualizations to surface actionable insights for improving website search visibility.",
+    "image": "/lms.jpg",
+    "tags": [
+      "Analytics",
+      "React",
+      "Dashboards",
+      "SEO"
+    ],
+    "status": "active",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "SEO Analytics Integration",
+      "JavaScript"
+    ],
+    "features": [
+      "Real-time keyword ranking monitor",
+      "Search engine performance metrics tracking",
+      "Clean data visualizations",
+      "Actionable insights reporting"
+    ],
+    "learningOutcomes": [
+      "Integrating third-party SEO analytics APIs securely",
+      "Implementing charts and graphs in React for big data visualizations",
+      "Creating highly responsive dashboard layouts"
+    ],
+    "links": {
+      "github": "https://github.com/Adityakumarsahoo"
+    },
+    "author": "Aditya Kumar",
+    "authorAvatar": "/hexagon.png"
+  }
+]

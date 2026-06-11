@@ -1,0 +1,46 @@
+{
+  "name": "Aditya Kumar",
+  "avatar": "/hexagon.png",
+  "profilePhoto": "/imageofaditya.jpg",
+  "typingWords": [
+    "AI Engineer",
+    "FullStack",
+    "Problem Solver",
+    "Dev Stallion"
+  ],
+  "bioText": "Results-driven Full Stack Developer with 2+ years of hands-on experience building and deploying scalable web applications using the MERN Stack and Java Spring Boot. Proven ability to design and consume REST APIs, implement real-time features via WebSockets, and deliver responsive, high-performance UIs. Completed 2 industry internships prior to graduation, independently deployed 15+ live full-stack projects, and ranked #1 in the CSE department. Adept at agile collaboration, clean architecture, and end-to-end product ownership.",
+  "about": {
+    "interests": [
+      "FULL-STACK DEV",
+      "MERN STACK",
+      "SPRING BOOT",
+      "WEB APPS",
+      "DATABASES",
+      "READING",
+      "TRAVEL"
+    ],
+    "techStack": [
+      "React",
+      "Node.js",
+      "Java",
+      "Spring Boot",
+      "TypeScript",
+      "Next.js",
+      "MongoDB",
+      "MySQL"
+    ],
+    "email": "toadityakumarsahoo@gmail.com",
+    "whoIAm": "Hello! I'm Aditya, a full-stack developer passionate about building clean, efficient, and scalable web applications. I specialize in the MERN Stack and Java Spring Boot, crafting end-to-end solutions that deliver high performance and great user experiences.",
+    "whatIDo": "I design and build robust web systems, consume/create RESTful APIs, and write optimized database schemas. I focus on clean architecture, agile collaboration, and taking complete product ownership from development to deployment.",
+    "myJourney": "With over 2 years of hands-on experience, I have successfully completed 2 industry internships and independently deployed 15+ live full-stack projects. I graduated as the top ranker (#1) in the Computer Science & Engineering department, combining academic excellence with practical execution.",
+    "vision": "To build high-performance products that solve real-world problems and write maintainable, clean code that stands the test of time.",
+    "beyondCode": "Love techno & house music, follow F1 (Max), play chess, and read regularly. Travelled recently to Bali, and a month in Thailand/Vietnam in 2025."
+  },
+  "socials": {
+    "twitter": "https://x.com/AdiTheNalanda",
+    "instagram": "https://www.instagram.com/king._.cindy",
+    "github": "https://github.com/Adityakumarsahoo",
+    "linkedin": "https://www.linkedin.com/in/aditya-kumar-sahoo-nit",
+    "medium": "https://medium.com/@hexagonsservices"
+  }
+}

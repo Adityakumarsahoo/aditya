@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Frontend",
+    "items": [
+      "React.js",
+      "Angular.js",
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Responsive Web Design",
+      "UI/UX Principles"
+    ],
+    "colorClass": "text-blue-400",
+    "hoverBorderClass": "hover:border-blue-500/35 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]"
+  },
+  {
+    "title": "Backend",
+    "items": [
+      "Node.js",
+      "Express.js",
+      "Java Spring Boot",
+      "Spring Framework",
+      "REST API Development",
+      "WebSockets (Socket.io)",
+      "Maven",
+      "Gradle"
+    ],
+    "colorClass": "text-emerald-400",
+    "hoverBorderClass": "hover:border-emerald-500/35 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
+  },
+  {
+    "title": "AI/ML",
+    "items": [
+      "Machine Learning Concepts",
+      "Neural Networks",
+      "Intelligent System Design",
+      "Prompt Engineering",
+      "OpenAI Integration",
+      "AI-based Fraud Detection",
+      "AI Pattern Recognition"
+    ],
+    "colorClass": "text-purple-400",
+    "hoverBorderClass": "hover:border-purple-500/35 hover:shadow-[0_0_20px_rgba(168,85,247,0.1)]"
+  },
+  {
+    "title": "Databases",
+    "items": [
+      "MongoDB",
+      "MySQL",
+      "SQL"
+    ],
+    "colorClass": "text-amber-400",
+    "hoverBorderClass": "hover:border-amber-500/35 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)]"
+  },
+  {
+    "title": "Cloud & DevOps",
+    "items": [
+      "Docker",
+      "Vercel",
+      "Netlify",
+      "GitHub Pages",
+      "Deployment & Hosting",
+      "Git-based Version Control"
+    ],
+    "colorClass": "text-rose-400",
+    "hoverBorderClass": "hover:border-rose-500/35 hover:shadow-[0_0_20px_rgba(244,63,94,0.1)]"
+  },
+  {
+    "title": "Tools",
+    "items": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "VS Code",
+      "IntelliJ IDEA",
+      "Eclipse",
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe After Effects"
+    ],
+    "colorClass": "text-cyan-400",
+    "hoverBorderClass": "hover:border-cyan-500/35 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]"
+  }
+]
