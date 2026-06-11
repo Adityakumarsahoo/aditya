@@ -670,9 +670,11 @@ app.post("/api/login", (req, res) => {
     return res.status(401).json({ error: "Invalid admin password" });
   }
   const token = jwt.sign({ admin: true }, JWT_SECRET, { expiresIn: "1d" });
+  const isProd = process.env.NODE_ENV === "production" || process.env.VERCEL === "1";
   res.cookie("admin_token", token, {
     httpOnly: true,
-    secure: false, // Set to true if running over HTTPS
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
     maxAge: 24 * 60 * 60 * 1000 // 1 day
   });
   res.json({ success: true, message: "Logged in successfully" });
@@ -680,7 +682,12 @@ app.post("/api/login", (req, res) => {
 
 // Admin Logout
 app.post("/api/logout", (req, res) => {
-  res.clearCookie("admin_token");
+  const isProd = process.env.NODE_ENV === "production" || process.env.VERCEL === "1";
+  res.clearCookie("admin_token", {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax"
+  });
   res.json({ success: true, message: "Logged out successfully" });
 });
 
