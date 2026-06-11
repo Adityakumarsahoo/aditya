@@ -57,8 +57,7 @@ const defaultProfile = {
     twitter: "https://x.com/AdiTheNalanda",
     instagram: "https://www.instagram.com/king._.cindy",
     github: "https://github.com/Adityakumarsahoo",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-sahoo-nit",
-    medium: "https://medium.com/@hexagonsservices"
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-sahoo-nit"
   },
   featuredVideo: "/homevideo.webm"
 };
@@ -344,8 +343,7 @@ const ProfileSchema = new mongoose.Schema({
     twitter: String,
     instagram: String,
     github: String,
-    linkedin: String,
-    medium: String
+    linkedin: String
   },
   featuredVideo: { type: String, default: "/homevideo.webm" }
 });
