@@ -25,15 +25,23 @@ app.use(cookieParser());
 
 // Static file hosting for uploads
 const UPLOADS_DIR = path.join(__dirname, "uploads");
-if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+try {
+  if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+  }
+} catch (err) {
+  console.warn("Failed to create uploads directory:", err.message);
 }
 app.use("/uploads", express.static(UPLOADS_DIR));
 
 // Create data directory
 const DATA_DIR = path.join(__dirname, "data");
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+try {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+} catch (err) {
+  console.warn("Failed to create data directory:", err.message);
 }
 
 // Initial default configuration loaders
@@ -432,7 +440,11 @@ function getFilePath(filename) {
 function readJSON(filename, defaultData) {
   const filePath = getFilePath(filename);
   if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, JSON.stringify(defaultData, null, 2), "utf8");
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(defaultData, null, 2), "utf8");
+    } catch (err) {
+      console.warn(`Could not create local fallback file ${filename}:`, err.message);
+    }
     return defaultData;
   }
   try {
@@ -444,9 +456,14 @@ function readJSON(filename, defaultData) {
   }
 }
 
+// Write JSON data
 function writeJSON(filename, data) {
   const filePath = getFilePath(filename);
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+  } catch (err) {
+    console.warn(`Could not write local fallback file ${filename}:`, err.message);
+  }
 }
 
 // MongoDB connection setup with fallback support
