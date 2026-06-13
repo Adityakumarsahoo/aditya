@@ -7,9 +7,17 @@ import { projects, Project } from "@/lib/projects-data";
 import { projectStyles as s } from "@/public/dummyStyles";
 import { API_BASE_URL } from "@/lib/api-config";
 import { CometCard } from "@/components/ui/comet-card";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 export default function ProjectsPage() {
   const [projectsList, setProjectsList] = useState<Project[]>(projects);
+
+  // Handle Server-Sent Events updates in real-time
+  useLiveUpdates((data) => {
+    if (data.projects && data.projects.length > 0) {
+      setProjectsList(data.projects);
+    }
+  });
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio`)

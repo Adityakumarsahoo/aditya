@@ -498,6 +498,47 @@ function cleanData(items) {
   });
 }
 
+// Server-Sent Events (SSE) state for active client connections
+let sseClients = [];
+
+// Broadcast update event to all connected clients
+function broadcastUpdate(type, data) {
+  const payload = JSON.stringify({ type, data });
+  sseClients.forEach(client => {
+    try {
+      client.write(`data: ${payload}\n\n`);
+    } catch (err) {
+      console.warn("Error sending SSE payload to client:", err.message);
+    }
+  });
+}
+
+// Fetch the complete portfolio state to push to clients
+async function getFullPortfolio() {
+  if (useMongoDB) {
+    try {
+      const profile = await Profile.findOne();
+      const projects = await Project.find();
+      const tools = await Tool.find();
+      const experience = await Experience.find();
+      const skills = await Skill.find();
+      const customSections = await CustomSection.find().sort({ order: 1 });
+      return { profile, projects, tools, experience, skills, customSections };
+    } catch (err) {
+      console.error("MongoDB fetch error in live-update broadcast:", err);
+    }
+  }
+
+  // Local JSON fallback
+  const profile = readJSON("profile.json", defaultProfile);
+  const projects = readJSON("projects.json", defaultProjects);
+  const tools = readJSON("tools.json", defaultTools);
+  const experience = readJSON("experience.json", defaultExperience);
+  const skills = readJSON("skills.json", defaultSkills);
+  const customSections = readJSON("custom-sections.json", []);
+  return { profile, projects, tools, experience, skills, customSections };
+}
+
 // MongoDB connection setup with fallback support
 const MONGODB_URI = process.env.MONGODB_URI;
 let useMongoDB = false;
@@ -617,6 +658,24 @@ const authenticateAdmin = (req, res, next) => {
 // PUBLIC ENDPOINTS
 // -------------------------
 
+// Server-Sent Events stream for real-time synchronization
+app.get("/api/live-updates", (req, res) => {
+  res.setHeader("Content-Type", "text/event-stream");
+  res.setHeader("Cache-Control", "no-cache");
+  res.setHeader("Connection", "keep-alive");
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Keep open for cross-origin SSE stream
+  res.flushHeaders(); // Establish stream
+
+  // Send keep-alive immediately
+  res.write(":ok\n\n");
+
+  sseClients.push(res);
+
+  req.on("close", () => {
+    sseClients = sseClients.filter(client => client !== res);
+  });
+});
+
 // Retrieve entire state config in one batch
 app.get("/api/portfolio", async (req, res) => {
   if (useMongoDB) {
@@ -726,6 +785,7 @@ app.post("/api/profile", authenticateAdmin, async (req, res) => {
         profile = new Profile(cleanedBody);
         await profile.save();
       }
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Profile updated in DB!", data: profile });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -733,6 +793,7 @@ app.post("/api/profile", authenticateAdmin, async (req, res) => {
   }
 
   writeJSON("profile.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Profile updated successfully!", data: req.body });
 });
 
@@ -742,6 +803,7 @@ app.post("/api/projects", authenticateAdmin, async (req, res) => {
     try {
       await Project.deleteMany();
       await Project.insertMany(cleanData(req.body));
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Projects updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -749,6 +811,7 @@ app.post("/api/projects", authenticateAdmin, async (req, res) => {
   }
 
   writeJSON("projects.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Projects updated successfully!", data: req.body });
 });
 
@@ -758,6 +821,7 @@ app.post("/api/tools", authenticateAdmin, async (req, res) => {
     try {
       await Tool.deleteMany();
       await Tool.insertMany(cleanData(req.body));
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Tools updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -765,6 +829,7 @@ app.post("/api/tools", authenticateAdmin, async (req, res) => {
   }
 
   writeJSON("tools.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Tools updated successfully!", data: req.body });
 });
 
@@ -774,6 +839,7 @@ app.post("/api/experience", authenticateAdmin, async (req, res) => {
     try {
       await Experience.deleteMany();
       await Experience.insertMany(cleanData(req.body));
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Experience data updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -781,6 +847,7 @@ app.post("/api/experience", authenticateAdmin, async (req, res) => {
   }
 
   writeJSON("experience.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Experience data updated successfully!", data: req.body });
 });
 
@@ -790,6 +857,7 @@ app.post("/api/skills", authenticateAdmin, async (req, res) => {
     try {
       await Skill.deleteMany();
       await Skill.insertMany(cleanData(req.body));
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Skills updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -797,6 +865,7 @@ app.post("/api/skills", authenticateAdmin, async (req, res) => {
   }
 
   writeJSON("skills.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Skills updated successfully!", data: req.body });
 });
 
@@ -806,6 +875,7 @@ app.post("/api/custom-sections", authenticateAdmin, async (req, res) => {
     try {
       await CustomSection.deleteMany();
       await CustomSection.insertMany(cleanData(req.body));
+      broadcastUpdate("portfolio_update", await getFullPortfolio());
       return res.json({ success: true, message: "Custom sections updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -813,6 +883,7 @@ app.post("/api/custom-sections", authenticateAdmin, async (req, res) => {
   }
   
   writeJSON("custom-sections.json", req.body);
+  broadcastUpdate("portfolio_update", await getFullPortfolio());
   res.json({ success: true, message: "Custom sections updated successfully!", data: req.body });
 });
 

@@ -9,9 +9,17 @@ import { aboutPageStyles } from "@/public/dummyStyles";
 import { User, Code2, Briefcase, Sparkles, Compass } from "lucide-react";
 
 import { API_BASE_URL } from "@/lib/api-config";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 export default function AboutPage() {
   const [profile, setProfile] = useState<any>(null);
+
+  // Handle Server-Sent Events updates in real-time
+  useLiveUpdates((data) => {
+    if (data.profile) {
+      setProfile(data.profile);
+    }
+  });
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio`)

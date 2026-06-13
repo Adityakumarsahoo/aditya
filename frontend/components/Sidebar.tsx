@@ -7,6 +7,7 @@ import { TypingAnimation } from "./ui/typing-animation";
 import { usePathname } from "next/navigation";
 import { sidebarStyles as s } from "@/public/dummyStyles";
 import { API_BASE_URL } from "@/lib/api-config";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 type IconProps = React.SVGProps<SVGSVGElement> & { className?: string };
 
@@ -73,6 +74,13 @@ export default function Sidebar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [profile, setProfile] = useState<any>(null);
   const pathname = usePathname();
+
+  // Handle Server-Sent Events updates in real-time
+  useLiveUpdates((data) => {
+    if (data.profile) {
+      setProfile(data.profile);
+    }
+  });
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio`)

@@ -13,11 +13,18 @@ import { API_BASE_URL } from "@/lib/api-config";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import * as Icons from "lucide-react";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 export default function HomePage() {
   const [profile, setProfile] = useState<any>(null);
   const [customSections, setCustomSections] = useState<any[]>([]);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Hook up real-time Server-Sent Events updates
+  useLiveUpdates((data) => {
+    if (data.profile) setProfile(data.profile);
+    if (data.customSections) setCustomSections(data.customSections);
+  });
 
   // Profile image 3D hover springs
   const imgX = useMotionValue(0);

@@ -6,6 +6,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { Briefcase, Code2 } from "lucide-react";
 import { timelineStyles as s } from "@/public/dummyStyles";
 import { API_BASE_URL } from "@/lib/api-config";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 interface TechCategory {
   title: string;
@@ -100,6 +101,16 @@ const defaultTechCategories: TechCategory[] = [
 export default function TimelineDemo() {
   const [experience, setExperience] = useState<any[]>([]);
   const [skills, setSkills] = useState<TechCategory[]>(defaultTechCategories);
+
+  // Handle Server-Sent Events updates in real-time
+  useLiveUpdates((data) => {
+    if (data.experience) {
+      setExperience(data.experience);
+    }
+    if (data.skills && data.skills.length > 0) {
+      setSkills(data.skills);
+    }
+  });
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio`)

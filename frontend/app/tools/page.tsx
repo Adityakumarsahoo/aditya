@@ -7,6 +7,7 @@ import { CometCard } from "@/components/ui/comet-card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { toolsPageStyles } from "@/public/dummyStyles";
 import { API_BASE_URL } from "@/lib/api-config";
+import { useLiveUpdates } from "@/lib/use-live-updates";
 
 interface Tool {
   name: string;
@@ -74,6 +75,13 @@ const defaultTools: Tool[] = [
 
 export default function ToolsPage() {
   const [toolsList, setToolsList] = useState<Tool[]>(defaultTools);
+
+  // Handle Server-Sent Events updates in real-time
+  useLiveUpdates((data) => {
+    if (data.tools && data.tools.length > 0) {
+      setToolsList(data.tools);
+    }
+  });
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio`)
