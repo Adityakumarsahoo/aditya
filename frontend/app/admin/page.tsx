@@ -62,7 +62,27 @@ export default function AdminDashboardPage() {
         const portRes = await fetch(`${API_BASE_URL}/api/portfolio`);
         const portData = await portRes.json();
         setProfile(portData.profile);
-        setProfileForm(portData.profile);
+        setProfileForm({
+          ...portData.profile,
+          about: {
+            interests: [],
+            techStack: [],
+            email: "",
+            whoIAm: "",
+            whatIDo: "",
+            myJourney: "",
+            vision: "",
+            beyondCode: "",
+            ...portData.profile?.about
+          },
+          socials: {
+            twitter: "",
+            instagram: "",
+            github: "",
+            linkedin: "",
+            ...portData.profile?.socials
+          }
+        });
         setProjects(portData.projects);
         setTools(portData.tools);
         setExperience(portData.experience);
@@ -1008,7 +1028,14 @@ export default function AdminDashboardPage() {
 
                             <div className="flex items-center gap-2 mt-3 justify-end">
                               <button
-                                onClick={() => setEditingProject(proj)}
+                                onClick={() => setEditingProject({
+                                  ...proj,
+                                  links: proj.links || {},
+                                  tags: proj.tags || [],
+                                  techStack: proj.techStack || [],
+                                  features: proj.features || [],
+                                  learningOutcomes: proj.learningOutcomes || []
+                                })}
                                 className="inline-flex items-center gap-1 p-1.5 rounded-md hover:bg-zinc-800 border border-transparent hover:border-zinc-700 text-xs text-zinc-300 transition-all cursor-pointer"
                               >
                                 <Edit className="w-3.5 h-3.5" />
@@ -1399,7 +1426,11 @@ export default function AdminDashboardPage() {
 
                               <div className="flex items-center gap-2">
                                 <button
-                                  onClick={() => setEditingExp(exp)}
+                                  onClick={() => setEditingExp({
+                                    ...exp,
+                                    points: exp.points || [],
+                                    tags: exp.tags || []
+                                  })}
                                   className="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white cursor-pointer"
                                 >
                                   <Edit className="w-4 h-4" />
@@ -1454,7 +1485,12 @@ export default function AdminDashboardPage() {
 
                               <div className="flex items-center gap-2 shrink-0 ml-3">
                                 <button
-                                  onClick={() => setEditingSkill({ ...cat, originalTitle: cat.title, isNew: false })}
+                                  onClick={() => setEditingSkill({
+                                    ...cat,
+                                    items: cat.items || [],
+                                    originalTitle: cat.title,
+                                    isNew: false
+                                  })}
                                   className="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white cursor-pointer"
                                 >
                                   <Edit className="w-4 h-4" />
