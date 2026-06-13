@@ -16,24 +16,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   
   let project: Project | null = null;
   
-  // Skip server-side fetches to localhost on production serverless environments (like Vercel)
-  // to prevent connection-refused crashes and Next.js revalidation cache failures.
-  const isServer = typeof window === "undefined";
-  const isLocalBase = API_BASE_URL.includes("localhost") || API_BASE_URL.includes("127.0.0.1");
-  const shouldFetch = !(isServer && isLocalBase);
-
-  if (shouldFetch) {
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/portfolio`, { next: { revalidate: 10 } });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.projects) {
-          project = data.projects.find((p: any) => p.slug === slug) || null;
-        }
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/portfolio`, { next: { revalidate: 10 } });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.projects) {
+        project = data.projects.find((p: any) => p.slug === slug) || null;
       }
-    } catch (err) {
-      console.error("Failed to fetch dynamic project on server:", err);
     }
+  } catch (err) {
+    console.error("Failed to fetch dynamic project on server:", err);
   }
 
   if (!project) {

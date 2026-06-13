@@ -481,6 +481,23 @@ function writeJSON(filename, data) {
   }
 }
 
+// Clean internal Mongoose IDs (_id, __v) from incoming requests before MongoDB insertion
+function cleanData(items) {
+  if (!items) return items;
+  if (!Array.isArray(items)) {
+    const cleaned = { ...items };
+    delete cleaned._id;
+    delete cleaned.__v;
+    return cleaned;
+  }
+  return items.map(item => {
+    const cleaned = { ...item };
+    delete cleaned._id;
+    delete cleaned.__v;
+    return cleaned;
+  });
+}
+
 // MongoDB connection setup with fallback support
 const MONGODB_URI = process.env.MONGODB_URI;
 let useMongoDB = false;
@@ -701,11 +718,12 @@ app.post("/api/profile", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       let profile = await Profile.findOne();
+      const cleanedBody = cleanData(req.body);
       if (profile) {
-        Object.assign(profile, req.body);
+        Object.assign(profile, cleanedBody);
         await profile.save();
       } else {
-        profile = new Profile(req.body);
+        profile = new Profile(cleanedBody);
         await profile.save();
       }
       return res.json({ success: true, message: "Profile updated in DB!", data: profile });
@@ -723,7 +741,7 @@ app.post("/api/projects", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       await Project.deleteMany();
-      await Project.insertMany(req.body);
+      await Project.insertMany(cleanData(req.body));
       return res.json({ success: true, message: "Projects updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -739,7 +757,7 @@ app.post("/api/tools", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       await Tool.deleteMany();
-      await Tool.insertMany(req.body);
+      await Tool.insertMany(cleanData(req.body));
       return res.json({ success: true, message: "Tools updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -755,7 +773,7 @@ app.post("/api/experience", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       await Experience.deleteMany();
-      await Experience.insertMany(req.body);
+      await Experience.insertMany(cleanData(req.body));
       return res.json({ success: true, message: "Experience data updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -771,7 +789,7 @@ app.post("/api/skills", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       await Skill.deleteMany();
-      await Skill.insertMany(req.body);
+      await Skill.insertMany(cleanData(req.body));
       return res.json({ success: true, message: "Skills updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });
@@ -787,7 +805,7 @@ app.post("/api/custom-sections", authenticateAdmin, async (req, res) => {
   if (useMongoDB) {
     try {
       await CustomSection.deleteMany();
-      await CustomSection.insertMany(req.body);
+      await CustomSection.insertMany(cleanData(req.body));
       return res.json({ success: true, message: "Custom sections updated in DB!", data: req.body });
     } catch (err) {
       return res.status(500).json({ error: err.message });

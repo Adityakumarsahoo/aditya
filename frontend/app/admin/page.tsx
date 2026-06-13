@@ -868,6 +868,74 @@ export default function AdminDashboardPage() {
                           className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-emerald-500/50"
                         />
                       </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-zinc-500 mb-1.5">Interests (comma separated)</label>
+                          <input
+                            type="text"
+                            value={profileForm.about.interests ? profileForm.about.interests.join(", ") : ""}
+                            onChange={(e) => setProfileForm({
+                              ...profileForm,
+                              about: { 
+                                ...profileForm.about, 
+                                interests: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) 
+                              }
+                            })}
+                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-zinc-500 mb-1.5">Tech Stack (comma separated)</label>
+                          <input
+                            type="text"
+                            value={profileForm.about.techStack ? profileForm.about.techStack.join(", ") : ""}
+                            onChange={(e) => setProfileForm({
+                              ...profileForm,
+                              about: { 
+                                ...profileForm.about, 
+                                techStack: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) 
+                              }
+                            })}
+                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-xs font-semibold text-zinc-500 mb-1.5">Email Address</label>
+                        <input
+                          type="email"
+                          value={profileForm.about.email || ""}
+                          onChange={(e) => setProfileForm({
+                            ...profileForm,
+                            about: { ...profileForm.about, email: e.target.value }
+                          })}
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-semibold text-zinc-500 mb-1.5">Vision</label>
+                        <textarea
+                          rows={3}
+                          value={profileForm.about.vision || ""}
+                          onChange={(e) => setProfileForm({
+                            ...profileForm,
+                            about: { ...profileForm.about, vision: e.target.value }
+                          })}
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-semibold text-zinc-500 mb-1.5">Beyond Code</label>
+                        <textarea
+                          rows={3}
+                          value={profileForm.about.beyondCode || ""}
+                          onChange={(e) => setProfileForm({
+                            ...profileForm,
+                            about: { ...profileForm.about, beyondCode: e.target.value }
+                          })}
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                        />
+                      </div>
                     </div>
                   </div>
 
