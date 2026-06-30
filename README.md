@@ -1,18 +1,21 @@
-# Aditya Kumar - Premium Full-Stack Portfolio
+# Aditya Kumar - Premium Real-Time Developer Portfolio
 
 A state-of-the-art, high-fidelity developer portfolio designed to showcase projects, skills, career timeline highlights, and custom dynamic content blocks. Built with a modern, hardware-accelerated user experience, it features an Express.js backend and a Next.js (Turbopack) frontend with visual animations (Framer Motion, CSS blobs, interactive cards, and 3D parallax effects).
+
+All content, profiles, typing words, skills, and projects are managed dynamically from the Admin Control Panel and synchronized in real-time to active visitors.
 
 ---
 
 ## 🚀 Key Features
 
-* **Dynamic Video Showcase:** The landing page features a dynamic featured work video. Admins can upload custom video showcase clips directly from the Admin Control Panel.
-* **Custom Dynamic Sections:** Admins can create, delete, and re-order custom information blocks (e.g., Certificates, Research Publications, Interests) dynamically, reflecting instantly on the homepage.
-* **Premium Hover Glare Cards:** Projects are wrapped in `CometCard` reflections that follow cursor movement with neon glare vectors.
-* **Staggered Skill Category Glows:** Career skill badges stagger their load times and glow with corresponding category-specific neon colors (Blue for Frontend, Emerald for Backend, Purple for AI, Amber for Databases, Rose for DevOps, and Cyan for Tools) when hovered.
-* **Drifting Background Atmosphere:** Sleek, floating ambient blobs drift gracefully in the background using performance-optimized CSS animations.
-* **Interactive Message Inbox:** A contact page equipped with custom animated modal state popups and an Admin panel dashboard to read, manage, or delete user inquiries.
-* **Robust local fallback databases:** If external keys are missing in the configuration, both the database and file upload system fall back automatically to local storage and static folder uploads.
+* **⚡ Real-Time Synchronized Admin Control:** Profile information, social links, experiences, tools, custom sections, and projects updated in the Admin Dashboard are synchronized instantly to all active clients using Server-Sent Events (SSE). No manual page reloads required.
+* **📂 Local Image Upload Manager:** Admins can upload custom project thumbnails, avatars, and assets directly from their local computer. The backend automatically uploads them to Cloudinary CDN, falling back to local static directory storage if Cloudinary is offline or unconfigured.
+* **🌐 Dynamic Project Live Links:** Supports displaying **GitHub** and **Live Link** action buttons side-by-side on project cards and details pages (with Live Link aligned on the right), reading dynamically from either `visit` or `link` keys.
+* **🔄 Zero-Cache Data Pipelines:** Configured HTTP cache-invalidation headers on the backend and client-side `{ cache: "no-store" }` fetch overrides to guarantee visitors always see the latest profile information immediately.
+* **✨ Premium Hover Glare Cards:** Projects are wrapped in `CometCard` reflections that follow cursor movement with neon glare vectors.
+* **🎨 Staggered Skill Category Glows:** Career skill badges stagger their load times and glow with corresponding category-specific neon colors (Blue for Frontend, Emerald for Backend, Purple for AI, Amber for Databases, Rose for DevOps, and Cyan for Tools) when hovered.
+* **🎈 Ambient Atmospheric Blobs:** Sleek, floating ambient blobs drift gracefully in the background using performance-optimized CSS animations.
+* **🛡️ Robust Local Fallbacks:** If MongoDB or Cloudinary credentials are omitted from variables, the backend automatically transitions to local JSON databases (`backend/data/`) and static folder uploads (`backend/uploads/`) for immediate offline usage.
 
 ---
 
@@ -23,11 +26,12 @@ A state-of-the-art, high-fidelity developer portfolio designed to showcase proje
 * **Styling:** Tailwind CSS v4, Vanilla CSS
 * **Animations:** Framer Motion (`motion/react`)
 * **Icons:** Lucide React
+* **Real-Time Hook:** EventSource connection utilizing custom React refs for stable persistent streams
 
 ### Backend
 * **Runtime:** Node.js, Express.js
-* **Database:** MongoDB (via Mongoose ODM) with a local JSON file storage fallback
-* **Uploads:** Cloudinary (CDN Media API) with a local filesystem upload fallback
+* **Database:** MongoDB (via Mongoose ODM) with local JSON file storage fallback
+* **Uploads:** Cloudinary (CDN Media API) with local filesystem upload fallback
 * **Security:** JSON Web Tokens (JWT) & HTTP-Only Secure Cookies
 
 ---
@@ -109,4 +113,4 @@ This codebase is designed with a **fail-safe architectural pattern**:
 ---
 
 ## 🔒 Administration Access
-To configure and edit the portfolio content, navigate to `/admin/login` on your browser and sign in using the `ADMIN_PASSWORD` defined in your backend `.env` variables.
+To configure and edit the portfolio content, navigate to `/admin/login` on your browser and sign in using the `ADMIN_PASSWORD` defined in your backend `.env` variables (Default fallback credentials: password `admin123`).
