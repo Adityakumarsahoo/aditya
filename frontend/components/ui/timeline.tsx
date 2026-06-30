@@ -63,8 +63,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               {/* Glowing futuristic circle node */}
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-zinc-950 border-2 border-zinc-800/80 flex items-center justify-center shadow-lg transition-all duration-300 hover:border-emerald-500/50">
-                <div className="h-3.5 w-3.5 rounded-full bg-gradient-to-r from-[#0FFF50] to-emerald-500 shadow-[0_0_10px_#0FFF50] animate-pulse" />
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-zinc-950 border-2 border-zinc-800/80 flex items-center justify-center shadow-lg transition-all duration-300 hover:border-blue-500/50">
+                <div className="h-3.5 w-3.5 rounded-full bg-gradient-to-r from-[#00E5FF] to-blue-500 shadow-[0_0_10px_#00E5FF] animate-pulse" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-extrabold text-zinc-400 tracking-tight transition-colors duration-300 hover:text-zinc-200">
                 {item.title}
@@ -72,7 +72,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-xl font-bold text-emerald-400 mb-4 tracking-tight">
+              <h3 className="md:hidden block text-xl font-bold text-blue-400 mb-4 tracking-tight">
                 {item.title}
               </h3>
               {item.content}{" "}
@@ -92,7 +92,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-full bg-gradient-to-b from-[#0FFF50] via-emerald-400 to-emerald-600 shadow-[0_0_12px_#0FFF50] rounded-full"
+            className="absolute inset-x-0 top-0 w-full bg-gradient-to-b from-[#00E5FF] via-blue-400 to-blue-600 shadow-[0_0_12px_#00E5FF] rounded-full"
           />
         </div>
       </div>

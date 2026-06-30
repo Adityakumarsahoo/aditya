@@ -31,9 +31,9 @@ export default function RootLayout({
 
         {/* Floating background ambient glow circles */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden -z-30" suppressHydrationWarning>
-          <div className="absolute top-[10%] left-[10%] w-[35vw] h-[35vw] rounded-full bg-emerald-500/10 blur-[130px] animate-blob" suppressHydrationWarning />
-          <div className="absolute top-[40%] right-[10%] w-[30vw] h-[30vw] rounded-full bg-teal-500/8 blur-[110px] animate-blob animation-delay-2000" suppressHydrationWarning />
-          <div className="absolute bottom-[10%] left-[30%] w-[25vw] h-[25vw] rounded-full bg-emerald-600/5 blur-[95px] animate-blob animation-delay-4000" suppressHydrationWarning />
+          <div className="absolute top-[10%] left-[10%] w-[35vw] h-[35vw] rounded-full bg-blue-500/10 blur-[130px] animate-blob" suppressHydrationWarning />
+          <div className="absolute top-[40%] right-[10%] w-[30vw] h-[30vw] rounded-full bg-indigo-500/8 blur-[110px] animate-blob animation-delay-2000" suppressHydrationWarning />
+          <div className="absolute bottom-[10%] left-[30%] w-[25vw] h-[25vw] rounded-full bg-blue-600/5 blur-[95px] animate-blob animation-delay-4000" suppressHydrationWarning />
         </div>
 
         <div className="min-h-screen flex">

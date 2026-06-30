@@ -44,8 +44,8 @@ const defaultTechCategories: TechCategory[] = [
       "Maven",
       "Gradle"
     ],
-    colorClass: "text-emerald-400",
-    hoverBorderClass: "hover:border-emerald-500/35 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)]",
+    colorClass: "text-blue-400",
+    hoverBorderClass: "hover:border-blue-500/35 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]",
   },
   {
     title: "AI/ML",
@@ -178,14 +178,14 @@ export default function TimelineDemo() {
   return (
     <div className={s.container}>
       {/* Spotlight for background glow depth */}
-      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#0FFF50" />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#00E5FF" />
       
       <div className={s.innerContainer}>
         <div className="mb-12">
           <div className={s.timelineBadge}>
             <span className="relative flex h-1.5 w-1.5 mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
             </span>
             <span className={s.timelineBadgeText}>Career Timeline</span>
           </div>
@@ -227,11 +227,11 @@ export default function TimelineDemo() {
                 </div>
                 <div className={s.techCardContent}>
                   {cat.items.map((item) => {
-                    let hoverPillColorClass = "hover:text-emerald-400 hover:border-emerald-500/35 hover:shadow-[0_0_10px_rgba(16,185,129,0.1)]";
+                    let hoverPillColorClass = "hover:text-blue-400 hover:border-blue-500/35 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]";
                     if (cat.title === "Frontend") {
                       hoverPillColorClass = "hover:text-blue-400 hover:border-blue-500/35 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]";
                     } else if (cat.title === "Backend") {
-                      hoverPillColorClass = "hover:text-emerald-400 hover:border-emerald-500/35 hover:shadow-[0_0_10px_rgba(16,185,129,0.1)]";
+                      hoverPillColorClass = "hover:text-blue-400 hover:border-blue-500/35 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]";
                     } else if (cat.title === "AI/ML") {
                       hoverPillColorClass = "hover:text-purple-400 hover:border-purple-500/35 hover:shadow-[0_0_10px_rgba(168,85,247,0.1)]";
                     } else if (cat.title === "Databases") {

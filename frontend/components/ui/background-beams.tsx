@@ -112,10 +112,10 @@ export const BackgroundBeams = React.memo(
                   delay: Math.random() * 10,
                 }}
               >
-               <stop stopColor="#EAB308" stopOpacity="0" />   {/* green fade-in */}
-               <stop stopColor="#FACC15" />                  {/* emerald green */}
-               <stop offset="32.5%" stopColor="#22C55E" />   {/* rich yellow */}
-               <stop offset="100%" stopColor="#22C55E" stopOpacity="0" /> {/* soft yellow fade-out */}
+               <stop stopColor="#1e3a8a" stopOpacity="0" />   {/* blue fade-in */}
+               <stop stopColor="#3b82f6" />                  {/* middle blue */}
+               <stop offset="32.5%" stopColor="#00E5FF" />   {/* neon cyan */}
+               <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" /> {/* cyan fade-out */}
 
 
                 

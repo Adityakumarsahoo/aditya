@@ -7,13 +7,13 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   const colors = [
-    "#0FFF50", // Neon Green (brightest)
-    "#10b981", // Emerald 500
-    "#34d399", // Emerald 400
-    "#00FF66", // Spring Green
-    "#00e676", // Accent Green
-    "#059669", // Emerald 600
-    "#00FFaa", // Bright Teal-Green
+    "#00E5FF", // Neon Cyan
+    "#3b82f6", // Blue 500
+    "#60a5fa", // Blue 400
+    "#00d2ff", // Neon Sky Blue
+    "#6366f1", // Indigo 500
+    "#1d4ed8", // Blue 700
+    "#06b6d4", // Cyan 500
   ];
   const getDeterministicColor = (rowIdx: number, colIdx: number) => {
     return colors[(rowIdx * 77 + colIdx * 33) % colors.length];
@@ -39,14 +39,14 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             <motion.div
               whileHover={{
                 backgroundColor: getDeterministicColor(i, j),
-                boxShadow: "0 0 25px rgba(15, 255, 80, 0.45)",
-                borderColor: "rgba(15, 255, 80, 0.45)",
+                boxShadow: "0 0 25px rgba(0, 229, 255, 0.45)",
+                borderColor: "rgba(0, 229, 255, 0.45)",
                 zIndex: 10,
                 transition: { duration: 0 },
               }}
               animate={{
                 backgroundColor: "rgba(0, 0, 0, 0)",
-                boxShadow: "0 0 0px rgba(15, 255, 80, 0)",
+                boxShadow: "0 0 0px rgba(0, 229, 255, 0)",
                 borderColor: "#18181b", // zinc-900 hex code
                 transition: { duration: 2 },
               }}

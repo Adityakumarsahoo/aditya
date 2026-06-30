@@ -134,9 +134,9 @@ export function CustomCursor() {
 
         .neon-ripple {
           position: fixed;
-          border: 2px solid #0FFF50;
+          border: 2px solid #00E5FF;
           border-radius: 50%;
-          background: rgba(15, 255, 80, 0.03);
+          background: rgba(0, 229, 255, 0.03);
           pointer-events: none;
           z-index: 9997;
           transform: translate(-50%, -50%);
@@ -148,15 +148,15 @@ export function CustomCursor() {
             width: 8px;
             height: 8px;
             opacity: 1;
-            border-color: #0FFF50;
-            box-shadow: 0 0 10px rgba(15, 255, 80, 0.8);
+            border-color: #00E5FF;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
           }
           100% {
             width: 90px;
             height: 90px;
             opacity: 0;
-            border-color: rgba(15, 255, 80, 0);
-            box-shadow: 0 0 25px rgba(15, 255, 80, 0);
+            border-color: rgba(0, 229, 255, 0);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0);
           }
         }
       `}} />
@@ -164,7 +164,7 @@ export function CustomCursor() {
       {/* Tiny inner neon green cursor dot */}
       <div
         ref={cursorDotRef}
-        className="fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 bg-[#0FFF50] rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 bg-[#00E5FF] rounded-full pointer-events-none z-[9999]"
         style={{
           transform: "translate3d(-100px, -100px, 0)",
         }}
@@ -173,9 +173,9 @@ export function CustomCursor() {
       {/* Trailing larger glowing aura ring */}
       <div
         ref={cursorRingRef}
-        className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border border-[#0FFF50]/30 bg-[#0FFF50]/5 shadow-[0_0_12px_rgba(15,255,80,0.12)] transition-all duration-300 ease-out ${
+        className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border border-[#00E5FF]/30 bg-[#00E5FF]/5 shadow-[0_0_12px_rgba(0, 229, 255, 0.12)] transition-all duration-300 ease-out ${
           isHovered
-            ? "w-12 h-12 -ml-6 -mt-6 border-[#0FFF50]/80 bg-[#0FFF50]/10 shadow-[0_0_22px_rgba(15,255,80,0.3)] scale-105"
+            ? "w-12 h-12 -ml-6 -mt-6 border-[#00E5FF]/80 bg-[#00E5FF]/10 shadow-[0_0_22px_rgba(0, 229, 255, 0.3)] scale-105"
             : "w-8 h-8 -ml-4 -mt-4"
         }`}
         style={{

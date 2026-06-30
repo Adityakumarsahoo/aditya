@@ -97,7 +97,7 @@ export default function ToolsPage() {
   return (
     <div className={toolsPageStyles.pageContainer}>
       {/* Spotlight for background glow depth */}
-      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#0FFF50" />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#00E5FF" />
 
       <div className={toolsPageStyles.contentContainer}>
         {/* Header */}

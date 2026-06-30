@@ -59,7 +59,7 @@ export default function AboutPage() {
   return (
     <div className={aboutPageStyles.pageContainer}>
       {/* Background Spotlight for atmospheric depth */}
-      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#0FFF50" />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#00E5FF" />
 
       <div className={aboutPageStyles.contentContainer}>
         {/* Background Container - Contains the animation behind content */}

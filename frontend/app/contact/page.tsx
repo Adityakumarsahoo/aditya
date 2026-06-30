@@ -103,7 +103,7 @@ export default function ContactPage() {
   return (
     <div className={contactPageStyles.pageContainer}>
       {/* Spotlight for background glow depth */}
-      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#0FFF50" />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#00E5FF" />
 
       <div className={contactPageStyles.contentContainer}>
         {/* Form Container with Boxes Background */}
@@ -332,10 +332,10 @@ function SuccessModal({ onClose }: { onClose: () => void }) {
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.9, y: 20, opacity: 0 }}
         transition={{ type: "spring", damping: 25, stiffness: 350 }}
-        className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-emerald-500/25 bg-zinc-950 p-6 shadow-[0_0_50px_rgba(16,185,129,0.15)] z-10 text-center"
+        className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-blue-500/25 bg-zinc-950 p-6 shadow-[0_0_50px_rgba(59,130,246,0.15)] z-10 text-center"
       >
         {/* Soft neon background glow */}
-        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -left-16 -top-16 h-36 w-36 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
 
         {/* Close Button */}
         <button
@@ -346,18 +346,18 @@ function SuccessModal({ onClose }: { onClose: () => void }) {
         </button>
 
         {/* Animated Green Circle & Checkmark */}
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-450 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
           <motion.div
             initial={{ scale: 0.5, rotate: -45 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
           >
-            <CheckCircle2 className="h-9 w-9 text-emerald-400" />
+            <CheckCircle2 className="h-9 w-9 text-blue-400" />
           </motion.div>
         </div>
 
         {/* Text Details */}
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-zinc-100 via-emerald-400 to-[#0FFF50] bg-clip-text text-transparent mb-2">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-zinc-100 via-blue-400 to-[#00E5FF] bg-clip-text text-transparent mb-2">
           Successfully Sent!
         </h2>
         <p className="text-sm text-zinc-400 leading-relaxed px-2 mb-6">
@@ -367,7 +367,7 @@ function SuccessModal({ onClose }: { onClose: () => void }) {
         {/* Action Button */}
         <button
           onClick={onClose}
-          className="w-full py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-950/20 text-emerald-400 hover:bg-emerald-500 hover:text-zinc-950 font-bold transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] active:scale-95 cursor-pointer"
+          className="w-full py-2.5 rounded-xl border border-blue-500/30 bg-blue-955/20 text-blue-400 hover:bg-blue-50 hover:text-zinc-950 font-bold transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] active:scale-95 cursor-pointer"
         >
           Awesome
         </button>

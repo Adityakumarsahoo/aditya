@@ -503,7 +503,7 @@ export default function AdminDashboardPage() {
     return (
       <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-zinc-400">
         <div className="text-center">
-          <div className="w-12 h-12 border-2 border-t-emerald-400 border-zinc-800 rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-2 border-t-blue-400 border-zinc-800 rounded-full animate-spin mx-auto mb-4" />
           <p className="text-sm font-semibold tracking-wider uppercase">Loading Dashboard...</p>
         </div>
       </div>
@@ -515,7 +515,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="min-h-screen relative bg-zinc-950 pt-20 px-4 sm:px-6 lg:px-8 pb-24 antialiased">
       {/* Spotlight Backdrop */}
-      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#0FFF50" />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-20" fill="#00E5FF" />
 
       {/* Grid Pattern Background */}
       <div className="pointer-events-none -z-20 absolute inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] opacity-30" />
@@ -546,7 +546,7 @@ export default function AdminDashboardPage() {
         {msgFeedback && (
           <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-xl border p-4 shadow-2xl backdrop-blur-md transition-all ${
             msgFeedback.type === "success" 
-              ? "border-emerald-500/30 bg-emerald-950/80 text-emerald-400" 
+              ? "border-blue-500/30 bg-blue-950/80 text-blue-400" 
               : "border-rose-500/30 bg-rose-950/80 text-rose-400"
           }`}>
             {msgFeedback.type === "success" ? <CheckCircle className="w-5 h-5 shrink-0" /> : <ShieldAlert className="w-5 h-5 shrink-0" />}
@@ -562,7 +562,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("inbox")}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "inbox"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -571,7 +571,7 @@ export default function AdminDashboardPage() {
                 Inbox Logs
               </div>
               {messages.length > 0 && (
-                <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full">
                   {messages.length}
                 </span>
               )}
@@ -581,7 +581,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("profile")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "profile"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -593,7 +593,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("projects")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "projects"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -605,7 +605,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("tools")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "tools"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -617,7 +617,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("experience")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "experience"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -629,7 +629,7 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("customSections")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                 activeTab === "customSections"
-                  ? "bg-emerald-500/5 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.03)]"
+                  ? "bg-blue-500/5 border-blue-500/20 text-blue-400 shadow-[0_0_15px_rgba(59, 130, 246,0.03)]"
                   : "border-transparent text-zinc-400 hover:bg-zinc-900/30 hover:text-zinc-200"
               }`}
             >
@@ -706,7 +706,7 @@ export default function AdminDashboardPage() {
                         )}
                         {uploadingAvatar && (
                           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <div className="w-4 h-4 border border-t-emerald-400 border-zinc-700 rounded-full animate-spin" />
+                            <div className="w-4 h-4 border border-t-blue-400 border-zinc-700 rounded-full animate-spin" />
                           </div>
                         )}
                       </div>
@@ -738,7 +738,7 @@ export default function AdminDashboardPage() {
                         )}
                         {uploadingProfilePhoto && (
                           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <div className="w-4 h-4 border border-t-emerald-400 border-zinc-700 rounded-full animate-spin" />
+                            <div className="w-4 h-4 border border-t-blue-400 border-zinc-700 rounded-full animate-spin" />
                           </div>
                         )}
                       </div>
@@ -771,7 +771,7 @@ export default function AdminDashboardPage() {
                         )}
                         {uploadingVideo && (
                           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <div className="w-4 h-4 border border-t-emerald-400 border-zinc-700 rounded-full animate-spin" />
+                            <div className="w-4 h-4 border border-t-blue-400 border-zinc-700 rounded-full animate-spin" />
                           </div>
                         )}
                       </div>
@@ -796,7 +796,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={profileForm.name}
                           onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
-                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-emerald-500/50 text-xs"
+                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-blue-500/50 text-xs"
                           required
                         />
                       </div>
@@ -806,7 +806,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={profileForm.profilePhoto || ""}
                           onChange={(e) => setProfileForm({ ...profileForm, profilePhoto: e.target.value })}
-                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-emerald-500/50 text-xs"
+                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-blue-500/50 text-xs"
                         />
                       </div>
                       <div>
@@ -815,7 +815,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={profileForm.featuredVideo || ""}
                           onChange={(e) => setProfileForm({ ...profileForm, featuredVideo: e.target.value })}
-                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-emerald-500/50 text-xs"
+                          className="w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-1.5 text-zinc-200 outline-none focus:border-blue-500/50 text-xs"
                         />
                       </div>
                     </div>
@@ -833,7 +833,7 @@ export default function AdminDashboardPage() {
                         ...profileForm,
                         typingWords: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                       })}
-                      className="w-full rounded-xl border border-zinc-800 bg-zinc-950/40 px-4 py-3 text-zinc-200 outline-none focus:border-emerald-500/50"
+                      className="w-full rounded-xl border border-zinc-800 bg-zinc-950/40 px-4 py-3 text-zinc-200 outline-none focus:border-blue-500/50"
                       required
                     />
                   </div>
@@ -847,7 +847,7 @@ export default function AdminDashboardPage() {
                       rows={5}
                       value={profileForm.bioText}
                       onChange={(e) => setProfileForm({ ...profileForm, bioText: e.target.value })}
-                      className="w-full resize-none rounded-xl border border-zinc-800 bg-zinc-950/40 px-4 py-3 text-zinc-200 outline-none focus:border-emerald-500/50"
+                      className="w-full resize-none rounded-xl border border-zinc-800 bg-zinc-950/40 px-4 py-3 text-zinc-200 outline-none focus:border-blue-500/50"
                       required
                     />
                   </div>
@@ -866,7 +866,7 @@ export default function AdminDashboardPage() {
                               ...profileForm,
                               socials: { ...profileForm.socials, [soc]: e.target.value }
                             })}
-                            className="w-full rounded-lg border border-zinc-850 bg-zinc-950/40 px-3.5 py-2 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                            className="w-full rounded-lg border border-zinc-850 bg-zinc-950/40 px-3.5 py-2 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                           />
                         </div>
                       ))}
@@ -886,7 +886,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, whoIAm: e.target.value }
                           })}
-                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -898,7 +898,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, whatIDo: e.target.value }
                           })}
-                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -910,7 +910,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, myJourney: e.target.value }
                           })}
-                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -926,7 +926,7 @@ export default function AdminDashboardPage() {
                                 interests: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) 
                               }
                             })}
-                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                           />
                         </div>
                         <div>
@@ -941,7 +941,7 @@ export default function AdminDashboardPage() {
                                 techStack: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) 
                               }
                             })}
-                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                            className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                           />
                         </div>
                       </div>
@@ -954,7 +954,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, email: e.target.value }
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -966,7 +966,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, vision: e.target.value }
                           })}
-                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -978,7 +978,7 @@ export default function AdminDashboardPage() {
                             ...profileForm,
                             about: { ...profileForm.about, beyondCode: e.target.value }
                           })}
-                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                     </div>
@@ -987,7 +987,7 @@ export default function AdminDashboardPage() {
                   <div className="pt-4">
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98] cursor-pointer"
+                      className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98] cursor-pointer"
                     >
                       <Save className="w-4 h-4" />
                       Save Configuration
@@ -1024,7 +1024,7 @@ export default function AdminDashboardPage() {
                           author: "Aditya Kumar",
                           authorAvatar: "/hexagon.png"
                         })}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 px-3.5 py-2 text-xs font-bold text-blue-400 hover:bg-blue-500/20 transition-all cursor-pointer"
                       >
                         <Plus className="w-3.5 h-3.5" />
                         Add New
@@ -1043,7 +1043,7 @@ export default function AdminDashboardPage() {
                               <div className="flex items-center gap-2 mb-1">
                                 <h3 className="font-bold text-sm text-zinc-200 truncate">{proj.title}</h3>
                                 <span className={`text-[9px] font-bold uppercase px-1.5 py-0.5 rounded-full ${
-                                  proj.status === "active" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-zinc-800 text-zinc-400"
+                                  proj.status === "active" ? "bg-blue-500/10 text-blue-400 border border-blue-500/20" : "bg-zinc-800 text-zinc-400"
                                 }`}>
                                   {proj.status}
                                 </span>
@@ -1093,7 +1093,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingProject.title}
                           onChange={(e) => setEditingProject({ ...editingProject, title: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="My Awesome App"
                         />
                       </div>
@@ -1103,7 +1103,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingProject.slug}
                           onChange={(e) => setEditingProject({ ...editingProject, slug: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="my-awesome-app"
                         />
                       </div>
@@ -1117,12 +1117,12 @@ export default function AdminDashboardPage() {
                             type="text"
                             value={editingProject.image}
                             onChange={(e) => setEditingProject({ ...editingProject, image: e.target.value })}
-                            className="flex-1 rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                            className="flex-1 rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                             placeholder="/resume.jpg or https://..."
                           />
                           <label className="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 rounded-xl border border-zinc-800 bg-zinc-900 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white transition-all cursor-pointer relative min-w-[120px]">
                             {uploadingProjectImage ? (
-                              <div className="w-4 h-4 border border-t-emerald-400 border-zinc-700 rounded-full animate-spin" />
+                              <div className="w-4 h-4 border border-t-blue-400 border-zinc-700 rounded-full animate-spin" />
                             ) : (
                               <>
                                 <Upload className="w-3.5 h-3.5" />
@@ -1148,7 +1148,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             links: { ...editingProject.links, github: e.target.value }
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         />
                       </div>
                     </div>
@@ -1163,7 +1163,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             links: { ...editingProject.links, visit: e.target.value }
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -1171,7 +1171,7 @@ export default function AdminDashboardPage() {
                         <select
                           value={editingProject.status}
                           onChange={(e) => setEditingProject({ ...editingProject, status: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         >
                           <option value="active">Active</option>
                           <option value="archived">Archived</option>
@@ -1185,7 +1185,7 @@ export default function AdminDashboardPage() {
                         type="text"
                         value={editingProject.description}
                         onChange={(e) => setEditingProject({ ...editingProject, description: e.target.value })}
-                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                       />
                     </div>
 
@@ -1195,7 +1195,7 @@ export default function AdminDashboardPage() {
                         rows={4}
                         value={editingProject.detailedDescription}
                         onChange={(e) => setEditingProject({ ...editingProject, detailedDescription: e.target.value })}
-                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-250 outline-none focus:border-emerald-500/50"
+                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-250 outline-none focus:border-blue-500/50"
                       />
                     </div>
 
@@ -1209,7 +1209,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             tags: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -1221,7 +1221,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             techStack: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                     </div>
@@ -1236,7 +1236,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             features: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -1248,7 +1248,7 @@ export default function AdminDashboardPage() {
                             ...editingProject,
                             learningOutcomes: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                           })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                     </div>
@@ -1256,7 +1256,7 @@ export default function AdminDashboardPage() {
                     <div className="flex gap-4 pt-2">
                       <button
                         onClick={() => handleSaveProject(editingProject)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
                       >
                         <Save className="w-4 h-4" />
                         Save Project
@@ -1291,7 +1291,7 @@ export default function AdminDashboardPage() {
                           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
                           href: ""
                         })}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 px-3.5 py-2 text-xs font-bold text-blue-400 hover:bg-blue-500/20 transition-all cursor-pointer"
                       >
                         <Plus className="w-3.5 h-3.5" />
                         Add New
@@ -1307,7 +1307,7 @@ export default function AdminDashboardPage() {
                             </div>
                             <div className="min-w-0">
                               <h3 className="font-bold text-sm text-zinc-200 truncate">{t.name}</h3>
-                              <p className="text-emerald-400 text-[10px] uppercase font-bold tracking-wider">{t.category}</p>
+                              <p className="text-blue-400 text-[10px] uppercase font-bold tracking-wider">{t.category}</p>
                             </div>
                           </div>
 
@@ -1343,7 +1343,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingTool.name}
                           onChange={(e) => setEditingTool({ ...editingTool, name: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="VS Code"
                           disabled={!editingTool.isNew}
                         />
@@ -1354,7 +1354,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingTool.category}
                           onChange={(e) => setEditingTool({ ...editingTool, category: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="IDE / Editor"
                         />
                       </div>
@@ -1367,7 +1367,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingTool.icon}
                           onChange={(e) => setEditingTool({ ...editingTool, icon: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         />
                       </div>
                       <div>
@@ -1376,7 +1376,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingTool.href}
                           onChange={(e) => setEditingTool({ ...editingTool, href: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                           placeholder="https://code.visualstudio.com"
                         />
                       </div>
@@ -1385,7 +1385,7 @@ export default function AdminDashboardPage() {
                     <div className="flex gap-4 pt-2">
                       <button
                         onClick={() => handleSaveTool(editingTool)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
                       >
                         <Save className="w-4 h-4" />
                         Save Tool
@@ -1412,7 +1412,7 @@ export default function AdminDashboardPage() {
                       <button
                         onClick={() => setExpSubTab("timeline")}
                         className={`pb-3 text-sm font-bold tracking-wide transition-all border-b-2 cursor-pointer ${
-                          expSubTab === "timeline" ? "border-emerald-500 text-emerald-400" : "border-transparent text-zinc-400 hover:text-zinc-200"
+                          expSubTab === "timeline" ? "border-blue-500 text-blue-400" : "border-transparent text-zinc-400 hover:text-zinc-200"
                         }`}
                       >
                         Career Timeline
@@ -1420,7 +1420,7 @@ export default function AdminDashboardPage() {
                       <button
                         onClick={() => setExpSubTab("skills")}
                         className={`pb-3 text-sm font-bold tracking-wide transition-all border-b-2 cursor-pointer ${
-                          expSubTab === "skills" ? "border-emerald-500 text-emerald-400" : "border-transparent text-zinc-400 hover:text-zinc-200"
+                          expSubTab === "skills" ? "border-blue-500 text-blue-400" : "border-transparent text-zinc-400 hover:text-zinc-200"
                         }`}
                       >
                         Technical Skills
@@ -1446,7 +1446,7 @@ export default function AdminDashboardPage() {
                               points: [],
                               tags: []
                             })}
-                            className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                            className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 px-3.5 py-2 text-xs font-bold text-blue-400 hover:bg-blue-500/20 transition-all cursor-pointer"
                           >
                             <Plus className="w-3.5 h-3.5" />
                             Add Entry
@@ -1507,7 +1507,7 @@ export default function AdminDashboardPage() {
                               colorClass: "text-blue-400",
                               hoverBorderClass: "hover:border-blue-500/35 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]"
                             })}
-                            className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                            className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 px-3.5 py-2 text-xs font-bold text-blue-400 hover:bg-blue-500/20 transition-all cursor-pointer"
                           >
                             <Plus className="w-3.5 h-3.5" />
                             Add Skill Group
@@ -1567,7 +1567,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingExp.role}
                           onChange={(e) => setEditingExp({ ...editingExp, role: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Full Stack Developer"
                         />
                       </div>
@@ -1577,7 +1577,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingExp.company}
                           onChange={(e) => setEditingExp({ ...editingExp, company: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Labmentix"
                         />
                       </div>
@@ -1590,7 +1590,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingExp.title}
                           onChange={(e) => setEditingExp({ ...editingExp, title: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Sep 2025 - Mar 2026"
                         />
                       </div>
@@ -1600,7 +1600,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingExp.location}
                           onChange={(e) => setEditingExp({ ...editingExp, location: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Full-Time · Noida/Remote"
                         />
                       </div>
@@ -1612,7 +1612,7 @@ export default function AdminDashboardPage() {
                         <select
                           value={editingExp.type}
                           onChange={(e) => setEditingExp({ ...editingExp, type: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         >
                           <option value="full-time">Full-Time</option>
                           <option value="internship">Internship</option>
@@ -1624,7 +1624,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingExp.companySubtitle}
                           onChange={(e) => setEditingExp({ ...editingExp, companySubtitle: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Full-stack web applications development"
                         />
                       </div>
@@ -1641,7 +1641,7 @@ export default function AdminDashboardPage() {
                           ...editingExp,
                           points: e.target.value.split("\n").filter(Boolean)
                         })}
-                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         placeholder="Engineered scalable systems..."
                       />
                     </div>
@@ -1657,7 +1657,7 @@ export default function AdminDashboardPage() {
                           ...editingExp,
                           tags: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                         })}
-                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         placeholder="React, Spring Boot, MySQL"
                       />
                     </div>
@@ -1665,7 +1665,7 @@ export default function AdminDashboardPage() {
                     <div className="flex gap-4 pt-2">
                       <button
                         onClick={() => handleSaveExp(editingExp)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
                       >
                         <Save className="w-4 h-4" />
                         Save Timeline Entry
@@ -1692,7 +1692,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingSkill.title}
                           onChange={(e) => setEditingSkill({ ...editingSkill, title: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Frontend"
                         />
                       </div>
@@ -1702,7 +1702,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingSkill.colorClass}
                           onChange={(e) => setEditingSkill({ ...editingSkill, colorClass: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="text-blue-400"
                         />
                       </div>
@@ -1714,7 +1714,7 @@ export default function AdminDashboardPage() {
                         type="text"
                         value={editingSkill.hoverBorderClass}
                         onChange={(e) => setEditingSkill({ ...editingSkill, hoverBorderClass: e.target.value })}
-                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                        className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         placeholder="hover:border-blue-500/35 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]"
                       />
                     </div>
@@ -1730,7 +1730,7 @@ export default function AdminDashboardPage() {
                           ...editingSkill,
                           items: e.target.value.split(",").map((s) => s.trim()).filter(Boolean)
                         })}
-                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         placeholder="React.js, Angular.js, HTML5"
                       />
                     </div>
@@ -1738,7 +1738,7 @@ export default function AdminDashboardPage() {
                     <div className="flex gap-4 pt-2">
                       <button
                         onClick={() => handleSaveSkill(editingSkill)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
                       >
                         <Save className="w-4 h-4" />
                         Save Skill Group
@@ -1772,7 +1772,7 @@ export default function AdminDashboardPage() {
                           icon: "Sparkles",
                           order: customSections.length
                         })}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 px-3.5 py-2 text-xs font-bold text-blue-400 hover:bg-blue-500/20 transition-all cursor-pointer"
                       >
                         <Plus className="w-3.5 h-3.5" />
                         Add New Section
@@ -1785,7 +1785,7 @@ export default function AdminDashboardPage() {
                           <div>
                             <div className="flex items-center gap-2.5 mb-1.5">
                               <h3 className="font-bold text-sm text-zinc-200">{sec.title}</h3>
-                              <span className="text-[10px] bg-zinc-950 border border-zinc-900 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
+                              <span className="text-[10px] bg-zinc-950 border border-zinc-900 text-blue-400 px-2 py-0.5 rounded-full font-bold">
                                 Order: {sec.order || 0}
                               </span>
                               <span className="text-[10px] bg-zinc-950 border border-zinc-900 text-zinc-400 px-2 py-0.5 rounded-full">
@@ -1827,7 +1827,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingCustomSection.title}
                           onChange={(e) => setEditingCustomSection({ ...editingCustomSection, title: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                           placeholder="Certificates & Accolades"
                         />
                       </div>
@@ -1837,7 +1837,7 @@ export default function AdminDashboardPage() {
                           type="number"
                           value={editingCustomSection.order || 0}
                           onChange={(e) => setEditingCustomSection({ ...editingCustomSection, order: parseInt(e.target.value) || 0 })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         />
                       </div>
                     </div>
@@ -1848,7 +1848,7 @@ export default function AdminDashboardPage() {
                         <select
                           value={editingCustomSection.icon || "Sparkles"}
                           onChange={(e) => setEditingCustomSection({ ...editingCustomSection, icon: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-300 outline-none focus:border-blue-500/50"
                         >
                           <option value="Sparkles">Sparkles (Default)</option>
                           <option value="Award">Award (Certificates)</option>
@@ -1866,7 +1866,7 @@ export default function AdminDashboardPage() {
                           type="text"
                           value={editingCustomSection.icon || "Sparkles"}
                           onChange={(e) => setEditingCustomSection({ ...editingCustomSection, icon: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-250 outline-none focus:border-emerald-500/50"
+                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-250 outline-none focus:border-blue-500/50"
                           placeholder="Or type Lucide icon name manually (e.g. Code, Shield)"
                         />
                       </div>
@@ -1883,7 +1883,7 @@ export default function AdminDashboardPage() {
                           ...editingCustomSection,
                           content: e.target.value
                         })}
-                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                        className="w-full resize-none rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-blue-500/50"
                         placeholder="Describe achievements, display custom markdown or normal paragraphs..."
                       />
                     </div>
@@ -1891,7 +1891,7 @@ export default function AdminDashboardPage() {
                     <div className="flex gap-4 pt-2">
                       <button
                         onClick={() => handleSaveCustomSection(editingCustomSection)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-[#0FFF50] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-[#00E5FF] px-6 py-3 text-sm font-bold text-zinc-950 transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer"
                       >
                         <Save className="w-4 h-4" />
                         Save Custom Section
