@@ -1,8 +1,45 @@
 # Aditya Kumar - Premium Real-Time Developer Portfolio
 
+<p align="center">
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  </a>
+  <a href="https://github.com/Adityakumarsahoo/aditya">
+    <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" />
+  </a>
+</p>
+
 A state-of-the-art, high-fidelity developer portfolio designed to showcase projects, skills, career timeline highlights, and custom dynamic content blocks. Built with a modern, hardware-accelerated user experience, it features an Express.js backend and a Next.js (Turbopack) frontend with visual animations (Framer Motion, CSS blobs, interactive cards, and 3D parallax effects).
 
 All content, profiles, typing words, skills, and projects are managed dynamically from the Admin Control Panel and synchronized in real-time to active visitors.
+
+---
+
+## 📸 Screenshots
+
+### Live Dynamic Homepage
+![Homepage Preview](assets/homepage_preview.png)
+
+### Real-Time Admin Control Panel
+![Admin Control Panel Preview](assets/admin_preview.png)
 
 ---
 
