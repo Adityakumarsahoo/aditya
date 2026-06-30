@@ -64,7 +64,7 @@ const defaultProfile = {
   name: "Aditya Kumar",
   avatar: "/hexagon.png",
   profilePhoto: "/imageofaditya.jpg",
-  typingWords: ["AI Engineer", "FullStack", "Problem Solver", "Dev Stallion"],
+  typingWords: ["Full Stack Developer", "MERN Stack Developer", "Java Developer", "AI Engineer", "Graphic Designer"],
   bioText: "Results-driven Full Stack Developer with 2+ years of hands-on experience building and deploying scalable web applications using the MERN Stack and Java Spring Boot. Proven ability to design and consume REST APIs, implement real-time features via WebSockets, and deliver responsive, high-performance UIs. Completed 2 industry internships prior to graduation, independently deployed 15+ live full-stack projects, and ranked #1 in the CSE department. Adept at agile collaboration, clean architecture, and end-to-end product ownership.",
   about: {
     interests: ["FULL-STACK DEV", "MERN STACK", "SPRING BOOT", "WEB APPS", "DATABASES", "READING", "TRAVEL"],
@@ -663,7 +663,6 @@ app.get("/api/live-updates", (req, res) => {
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
   res.setHeader("Connection", "keep-alive");
-  res.setHeader("Access-Control-Allow-Origin", "*"); // Keep open for cross-origin SSE stream
   res.flushHeaders(); // Establish stream
 
   // Send keep-alive immediately
@@ -678,6 +677,7 @@ app.get("/api/live-updates", (req, res) => {
 
 // Retrieve entire state config in one batch
 app.get("/api/portfolio", async (req, res) => {
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
   if (useMongoDB) {
     try {
       const profile = await Profile.findOne();

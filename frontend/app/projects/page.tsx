@@ -20,7 +20,7 @@ export default function ProjectsPage() {
   });
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/portfolio`)
+    fetch(`${API_BASE_URL}/api/portfolio`, { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         if (data && data.projects && data.projects.length > 0) {
@@ -118,17 +118,6 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Actions */}
         <div className={s.actionsContainer}>
           <div className={s.actionsLinksContainer}>
-            {project.links.visit && (
-              <a
-                href={project.links.visit}
-                onClick={(e) => e.stopPropagation()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={s.visitButton}
-              >
-                Visit
-              </a>
-            )}
             {project.links.github && (
               <a
                 href={project.links.github}
@@ -138,6 +127,17 @@ function ProjectCard({ project }: { project: Project }) {
                 className={s.otherButton}
               >
                 GitHub
+              </a>
+            )}
+            {(project.links.visit || project.links.link) && (
+              <a
+                href={project.links.visit || project.links.link}
+                onClick={(e) => e.stopPropagation()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.visitButton}
+              >
+                Live Link
               </a>
             )}
             {project.links.pypi && (

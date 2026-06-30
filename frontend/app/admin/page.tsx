@@ -37,6 +37,7 @@ export default function AdminDashboardPage() {
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const [uploadingProfilePhoto, setUploadingProfilePhoto] = useState(false);
   const [uploadingVideo, setUploadingVideo] = useState(false);
+  const [uploadingProjectImage, setUploadingProjectImage] = useState(false);
 
   // Modal editor states for Add/Edit Projects & Tools
   const [editingProject, setEditingProject] = useState<any>(null);
@@ -59,7 +60,7 @@ export default function AdminDashboardPage() {
         setAuthChecked(true);
 
         // Load Portfolio Data
-        const portRes = await fetch(`${API_BASE_URL}/api/portfolio`);
+        const portRes = await fetch(`${API_BASE_URL}/api/portfolio`, { cache: "no-store" });
         const portData = await portRes.json();
         setProfile(portData.profile);
         setProfileForm({
@@ -190,6 +191,30 @@ export default function AdminDashboardPage() {
       triggerFeedback("error", err.message || "Failed to upload image");
     } finally {
       setUploadingProfilePhoto(false);
+    }
+  };
+
+  const handleProjectImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+
+    setUploadingProjectImage(true);
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/upload`, {
+        method: "POST",
+        body: formData,
+        credentials: "include"
+      });
+      if (!res.ok) throw new Error("Upload failed");
+      const data = await res.json();
+      setEditingProject((prev: any) => ({ ...prev, image: data.url }));
+      triggerFeedback("success", "Project image uploaded successfully!");
+    } catch (err: any) {
+      triggerFeedback("error", err.message || "Failed to upload image");
+    } finally {
+      setUploadingProjectImage(false);
     }
   };
 
@@ -1087,12 +1112,32 @@ export default function AdminDashboardPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 mb-1.5">Image Link / Asset Path</label>
-                        <input
-                          type="text"
-                          value={editingProject.image}
-                          onChange={(e) => setEditingProject({ ...editingProject, image: e.target.value })}
-                          className="w-full rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
-                        />
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            value={editingProject.image}
+                            onChange={(e) => setEditingProject({ ...editingProject, image: e.target.value })}
+                            className="flex-1 rounded-xl border border-zinc-850 bg-zinc-950/40 px-4 py-3 text-sm text-zinc-200 outline-none focus:border-emerald-500/50"
+                            placeholder="/resume.jpg or https://..."
+                          />
+                          <label className="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 rounded-xl border border-zinc-800 bg-zinc-900 text-xs font-semibold text-zinc-300 hover:border-zinc-700 hover:text-white transition-all cursor-pointer relative min-w-[120px]">
+                            {uploadingProjectImage ? (
+                              <div className="w-4 h-4 border border-t-emerald-400 border-zinc-700 rounded-full animate-spin" />
+                            ) : (
+                              <>
+                                <Upload className="w-3.5 h-3.5" />
+                                Upload File
+                              </>
+                            )}
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={handleProjectImageUpload}
+                              disabled={uploadingProjectImage}
+                            />
+                          </label>
+                        </div>
                       </div>
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 mb-1.5">GitHub Source Link</label>

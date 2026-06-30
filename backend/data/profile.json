@@ -1,12 +1,13 @@
 {
   "name": "Aditya Kumar",
-  "avatar": "/hexagon.png",
-  "profilePhoto": "/imageofaditya.jpg",
+  "avatar": "https://res.cloudinary.com/dh4mertnn/image/upload/v1782818722/portfolio/xomkgjq8khswq8hoh0ov.png",
+  "profilePhoto": "https://res.cloudinary.com/dh4mertnn/image/upload/v1782818735/portfolio/nysttxo4xvg650tzbuhs.png",
   "typingWords": [
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "Java Developer",
     "AI Engineer",
-    "FullStack",
-    "Problem Solver",
-    "Dev Stallion"
+    "Graphic Designer"
   ],
   "bioText": "Results-driven Full Stack Developer with 2+ years of hands-on experience building and deploying scalable web applications using the MERN Stack and Java Spring Boot. Proven ability to design and consume REST APIs, implement real-time features via WebSockets, and deliver responsive, high-performance UIs. Completed 2 industry internships prior to graduation, independently deployed 15+ live full-stack projects, and ranked #1 in the CSE department. Adept at agile collaboration, clean architecture, and end-to-end product ownership.",
   "about": {
@@ -41,5 +42,6 @@
     "instagram": "https://www.instagram.com/king._.cindy",
     "github": "https://github.com/Adityakumarsahoo",
     "linkedin": "https://www.linkedin.com/in/aditya-kumar-sahoo-nit"
-  }
+  },
+  "featuredVideo": "https://res.cloudinary.com/dh4mertnn/video/upload/v1782819026/portfolio/bpxgebogzt3b7dza3vxs.mp4"
 }

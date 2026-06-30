@@ -49,7 +49,7 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/portfolio`)
+    fetch(`${API_BASE_URL}/api/portfolio`, { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -243,11 +243,10 @@ export default function HomePage() {
                   <span>Featured Work</span>
                 </div>
                 <h3 className={homePageStyles.article.title}>
-                  My 2025: shipping, signal, and a few uncomfortable rules
+                  My 2026: Building, Learning, and Shipping Without Excuses
                 </h3>
                 <p className={homePageStyles.article.description}>
-                  A candid review of 2025 into 2026. The video above showcases
-                  some of the key projects and moments from my journey.
+                  Built 15+ Full-Stack Projects from scratch. Balanced two concurrent remote internships while completing my B.Tech. Worked with MERN Stack and Java Spring Boot on production-ready applications.
                 </p>
 
                 {/* Optional: Add a simple link/button if you want users to still have a way to interact */}

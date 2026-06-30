@@ -113,7 +113,7 @@ export default function TimelineDemo() {
   });
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/portfolio`)
+    fetch(`${API_BASE_URL}/api/portfolio`, { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         if (data) {

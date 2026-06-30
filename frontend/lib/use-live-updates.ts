@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { API_BASE_URL } from "@/lib/api-config";
 
 /**
@@ -8,15 +8,24 @@ import { API_BASE_URL } from "@/lib/api-config";
  * @param onUpdate Callback triggered with the full updated portfolio payload.
  */
 export function useLiveUpdates(onUpdate: (data: any) => void) {
+  const onUpdateRef = useRef(onUpdate);
+
+  // Keep callback reference updated without triggering dependency updates
   useEffect(() => {
-    // Connect to the backend Server-Sent Events stream
-    const eventSource = new EventSource(`${API_BASE_URL}/api/live-updates`);
+    onUpdateRef.current = onUpdate;
+  }, [onUpdate]);
+
+  useEffect(() => {
+    // Connect to the backend Server-Sent Events stream with credentials
+    const eventSource = new EventSource(`${API_BASE_URL}/api/live-updates`, {
+      withCredentials: true,
+    });
 
     eventSource.onmessage = (event) => {
       try {
         const payload = JSON.parse(event.data);
         if (payload.type === "portfolio_update" && payload.data) {
-          onUpdate(payload.data);
+          onUpdateRef.current(payload.data);
         }
       } catch (err) {
         console.error("Failed to parse dynamic live update event payload:", err);
@@ -24,14 +33,14 @@ export function useLiveUpdates(onUpdate: (data: any) => void) {
     };
 
     eventSource.onerror = (err) => {
-      // Gracefully close on error to allow standard manual reload fallbacks
-      console.warn("EventSource stream connection error, closing:", err);
-      eventSource.close();
+      // Log errors but do NOT close the eventSource so that the browser's
+      // standard automatic reconnection mechanism can retry.
+      console.warn("EventSource stream connection error, browser will attempt automatic reconnection:", err);
     };
 
     // Clean up EventSource connection on component unmount
     return () => {
       eventSource.close();
     };
-  }, [onUpdate]);
+  }, []);
 }

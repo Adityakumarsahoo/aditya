@@ -5,7 +5,7 @@
     "slug": "aditya-prime-healthcare",
     "description": "Hospital Management System that digitizes patient records, registrations, and doctor scheduling",
     "detailedDescription": "A complete Hospital Management System built to streamline healthcare administration. Digitized patient registration, doctor appointment scheduling, and medical records management, eliminating manual paperwork and reducing administrative overhead. Features secure role-based access control (RBAC) for doctors, admins, and patients using Spring Security and JWT authentication.",
-    "image": "/resume.jpg",
+    "image": "https://res.cloudinary.com/dh4mertnn/image/upload/v1782817669/portfolio/eszius8bw3esamzqg8hc.png",
     "tags": [
       "Healthcare",
       "Full-Stack",
@@ -35,7 +35,8 @@
       "Connecting Java Spring Boot backend with React.js frontend"
     ],
     "links": {
-      "github": "https://github.com/Adityakumarsahoo"
+      "github": "https://github.com/Adityakumarsahoo",
+      "visit": "https://vantage-ai-choice.vercel.app/"
     },
     "author": "Aditya Kumar",
     "authorAvatar": "/hexagon.png"

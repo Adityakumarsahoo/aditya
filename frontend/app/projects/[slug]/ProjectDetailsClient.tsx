@@ -61,8 +61,8 @@ export default function ProjectDetailsClient({ initialProject, slug }: ProjectDe
 
             {/* Action Buttons */}
             <div className={s.actionButtonsContainer}>
-              {project.links?.visit && (
-                <Link href={project.links.visit} target="_blank" rel="noopener noreferrer" className={s.visitButton}>
+              {(project.links?.visit || project.links?.link) && (
+                <Link href={project.links.visit || project.links.link || "#"} target="_blank" rel="noopener noreferrer" className={s.visitButton}>
                   <ExternalLink className={s.buttonIcon} />
                   Visit Live
                 </Link>
@@ -148,8 +148,8 @@ export default function ProjectDetailsClient({ initialProject, slug }: ProjectDe
                     <span className={s.linkText}>View Source Code</span>
                   </a>
                 )}
-                {project.links?.visit && (
-                  <a href={project.links.visit} target="_blank" rel="noopener noreferrer" className={s.linkCard}>
+                {(project.links?.visit || project.links?.link) && (
+                  <a href={project.links.visit || project.links.link} target="_blank" rel="noopener noreferrer" className={s.linkCard}>
                     <ExternalLink className={s.linkIcon} />
                     <span className={s.linkText}>Live Demo</span>
                   </a>
