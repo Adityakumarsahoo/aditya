@@ -18,6 +18,8 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 // Middlewares
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://www.adityakumars.in",
+  "https://adityakumars.in",
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -26,6 +28,7 @@ app.use(cors({
     if (!origin) return callback(null, true);
     const isAllowed = allowedOrigins.includes(origin) || 
                       origin.endsWith(".vercel.app") || 
+                      origin.endsWith("adityakumars.in") ||
                       origin.includes("localhost:");
     if (isAllowed) {
       callback(null, true);
@@ -953,3 +956,5 @@ app.post("/api/upload", authenticateAdmin, upload.single("image"), async (req, r
 app.listen(PORT, () => {
   console.log(`Portfolio backend running at http://localhost:${PORT}`);
 });
+
+module.exports = app;
