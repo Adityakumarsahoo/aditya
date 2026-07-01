@@ -783,6 +783,8 @@ app.post("/api/profile", authenticateAdmin, async (req, res) => {
       const cleanedBody = cleanData(req.body);
       if (profile) {
         Object.assign(profile, cleanedBody);
+        profile.markModified("about");
+        profile.markModified("socials");
         await profile.save();
       } else {
         profile = new Profile(cleanedBody);
