@@ -5,6 +5,7 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import { CustomCursor } from "@/components/ui/custom-cursor";
+import Preloader from "@/components/Preloader";
 
 const geistSans = Geist({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -26,6 +27,9 @@ export default function RootLayout({
         className={`${geistSans.className} ${geistMono.className} bg-zinc-950 text-zinc-100 antialiased`}
         suppressHydrationWarning
       >
+        {/* Global preloader shown on initial load and refresh */}
+        <Preloader />
+
         {/* Global custom neon cursor and click ripple indicator */}
         <CustomCursor />
 
