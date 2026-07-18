@@ -61,28 +61,31 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "QuickChat",
-    slug: "quickchat",
-    description: "Real-Time Messaging Application supporting group and one-on-one conversations",
+    title: "QYRONIX AI",
+    slug: "qyronix-ai",
+    description: "Advanced all-in-one Multi-Agent AI platform enabling users to chat, code, create images & videos, analyze documents, and generate presentations.",
     detailedDescription:
-      "A full-stack real-time chat platform with zero-delay messaging using WebSockets (Socket.io), supporting group and one-on-one conversations. Deployed live on Vercel with persistent message history stored in MongoDB, delivering a WhatsApp-style user experience.",
+      "QYRONIX AI is a next-generation, enterprise-grade Multi-Agent AI platform inspired by modern conversational AI systems. It combines multiple specialized AI agents into a single intelligent workspace, enabling users to generate text, write and execute code, preview applications, create images, produce presentations, analyze PDFs, summarize documents, generate videos, and automate complex workflows—all through natural language conversations.\n\nThe platform intelligently routes user requests to the most suitable AI agent, ensuring faster responses, higher accuracy, and task-specific expertise. It is designed for developers, students, businesses, content creators, and enterprises seeking an all-in-one AI productivity solution.",
     image: "/task.jpg",
-    tags: ["WebSockets", "MERN", "Real-Time", "Communication"],
+    tags: ["Multi-Agent AI", "MERN Stack", "AI Hub", "Full-Stack"],
     status: "active",
-    techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Socket.io", "REST APIs"],
+    techStack: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "WebSocket", "OpenAI API", "Claude API", "Gemini API"],
     features: [
-      "Zero-delay instant messaging",
-      "Group and one-on-one private conversations",
-      "Persistent message history storage",
-      "Live deployment with low latency"
+      "Multi-Agent AI System (Coding, Image, Video, Presentation, PDF, Research, and Data Agents)",
+      "Intelligent Agent Router selecting the most suitable model (OpenAI, Claude, Gemini, DeepSeek)",
+      "Interactive Coding Workspace with live HTML/CSS/JS/React preview and sandbox execution",
+      "Document Intelligence for parsing and analyzing PDFs/DOCX with question answering & OCR",
+      "Professional Presentation Generator exporting slides directly to PPTX and PDF formats"
     ],
     learningOutcomes: [
-      "Managing WebSocket connections with Socket.io in a MERN stack",
-      "Deploying real-time services on Vercel",
-      "Structuring MongoDB documents for chat logs and history"
+      "Designing a complex multi-agent system with intelligent routing and task delegation",
+      "Building an interactive, secure code execution sandbox with real-time live preview engine",
+      "Integrating multiple state-of-the-art LLM APIs (OpenAI, Anthropic Claude, Gemini, DeepSeek)",
+      "Implementing file parsing (PDF, DOCX) and generation (PPTX, PDF) pipelines on Node.js"
     ],
     links: {
       github: "https://github.com/Adityakumarsahoo",
+      visit: "https://adityakumars.in",
     },
     author: "Aditya Kumar",
     authorAvatar: "/hexagon.png",
