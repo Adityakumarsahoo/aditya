@@ -30,28 +30,31 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Aditya Prime HealthCare",
-    slug: "aditya-prime-healthcare",
-    description: "Hospital Management System that digitizes patient records, registrations, and doctor scheduling",
+    title: "Enterprise-Grade Website Auditor",
+    slug: "enterprise-grade-website-auditor",
+    description: "Comprehensive website analysis platform auditing performance, SEO, security, accessibility, and Core Web Vitals.",
     detailedDescription:
-      "A complete Hospital Management System built to streamline healthcare administration. Digitized patient registration, doctor appointment scheduling, and medical records management, eliminating manual paperwork and reducing administrative overhead. Features secure role-based access control (RBAC) for doctors, admins, and patients using Spring Security and JWT authentication.",
-    image: "/resume.jpg",
-    tags: ["Healthcare", "Full-Stack", "Spring Boot", "MySQL"],
+      "Enterprise-Grade Website Auditor is a full-stack MERN web application that performs comprehensive website analysis and provides detailed audit reports on performance, SEO, security, accessibility, best practices, and overall website health. The platform helps developers, businesses, and website owners identify issues, improve user experience, and optimize websites according to modern web standards.\n\nThe application scans a website URL, collects key metrics, generates an interactive dashboard, and provides actionable recommendations with professional reports. It is designed with scalability, security, and high performance in mind, making it suitable for enterprise-level usage.",
+    image: "https://res.cloudinary.com/dh4mertnn/image/upload/v1782817669/portfolio/eszius8bw3esamzqg8hc.png",
+    tags: ["MERN", "Lighthouse API", "Website Audit", "Full-Stack"],
     status: "active",
-    techStack: ["Java", "Spring Boot", "React.js", "Node.js", "MySQL", "HTML5", "CSS3", "JavaScript"],
+    techStack: ["React.js", "Vite", "JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Tailwind CSS", "Axios", "Chart.js", "Lighthouse API", "PageSpeed Insights API"],
     features: [
-      "Digitized patient registration",
-      "Doctor appointment scheduling",
-      "Medical records management",
-      "Secure role-based access control (RBAC)"
+      "Comprehensive URL analysis (performance, SEO, security, accessibility, best practices)",
+      "API integration with Google Lighthouse and PageSpeed Insights",
+      "Interactive dashboard with real-time website health and core web vitals scores",
+      "Secure JWT Authentication, refresh tokens, and protected routes with RBAC",
+      "Professional PDF report generation and audit history tracking"
     ],
     learningOutcomes: [
-      "Implementing secure RBAC with Spring Security and JWT",
-      "Designing complex schemas for healthcare databases in MySQL",
-      "Connecting Java Spring Boot backend with React.js frontend"
+      "Integrating external Google Lighthouse & PageSpeed Insights APIs for live scanning",
+      "Implementing role-based access control (RBAC) and JWT refresh token rotation",
+      "Visualizing complex audit data using interactive charts and statistics dashboards",
+      "Generating automated, professional PDF audit reports dynamically"
     ],
     links: {
       github: "https://github.com/Adityakumarsahoo",
+      visit: "https://vantage-ai-choice.vercel.app/"
     },
     author: "Aditya Kumar",
     authorAvatar: "/hexagon.png",
